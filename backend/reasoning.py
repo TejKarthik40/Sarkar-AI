@@ -1,7 +1,7 @@
 import os
 import json
 from typing import List, Dict
-from langchain.schema import Document
+from langchain_core.documents import Document
 # In a real scenario, we would use LangChain's ChatGoogleGenerativeAI or ChatOpenAI
 # from langchain_google_genai import ChatGoogleGenerativeAI
 

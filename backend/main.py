@@ -2,8 +2,8 @@ import os
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List, Optional
-from backend.rag import RAGSystem
-from backend.reasoning import ReasoningEngine
+from rag import RAGSystem
+from reasoning import ReasoningEngine
 
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -52,7 +52,9 @@ async def health_check():
 async def ingest_data():
     """Trigger ingestion of schemes.json into Vector DB."""
     try:
-        count = rag_system.ingest_data("./backend/data/schemes.json")
+        import os
+        data_path = os.path.join(os.path.dirname(__file__), "data", "schemes.json")
+        count = rag_system.ingest_data(data_path)
         return {"message": f"Successfully ingested {count} schemes."}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

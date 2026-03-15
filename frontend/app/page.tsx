@@ -34,7 +34,7 @@ export default function Home() {
     setLoading(true);
     setData(null); // Reset previous results
     try {
-      const res = await fetch('http://localhost:8000/recommend', {
+      const res = await fetch('http://localhost:8001/recommend', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ user_context: context }),
