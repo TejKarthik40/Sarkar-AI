@@ -14,7 +14,7 @@ Below is a **well-structured professional README.md** you can directly paste int
 
 ---
 
-# 🇮🇳 Sarkar AI
+# Sarkar AI
 
 ### AI-Powered Government Scheme Recommendation System
 
